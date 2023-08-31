@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutButton = document.getElementById('checkout-btn');
     
     // Define backend base URL
-    const BACKEND_BASE_URL = "http://35.225.193.93:3000"; // Use backend VM's IP or domain
+    const BACKEND_BASE_URL = "http://34.123.7.15:3000"; // Use backend VM's IP or domain
 
     document.body.addEventListener('click', async (event) => {
         if (event.target.classList.contains('add-to-cart')) {
