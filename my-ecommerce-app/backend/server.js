@@ -1,10 +1,11 @@
 const express = require('express');
+const cors = require('cors');  // Import the CORS library.
 const app = express();
-const path = require('path');
 
 const cart = [];
 
-app.use(express.static(path.join(__dirname, '../frontend/public')));
+// Middleware setup
+app.use(cors());  // Use CORS middleware to handle cross-origin requests.
 app.use(express.json());
 
 const PRODUCT_INFO = {
@@ -49,9 +50,4 @@ app.post('/api/checkout', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-});
-
-// Define a default route to serve index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/public', 'index.html'));
 });
